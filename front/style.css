@@ -1,0 +1,32 @@
+h2 {
+	font-size: 1.5rem!important;
+}
+
+a {
+	color: #000000!important;
+}
+
+a:hover {
+	background: -webkit-gradient(linear, left top, left bottom, from(#d27f41), to(#945ef0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.degrade {
+    background: -webkit-gradient(linear, left top, left bottom, from(#d27f41), to(#945ef0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#reinsurance {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 1.1rem;
+	color: #ffffff;
+	background-color: #e81616;
+	height: 35px;
+}
+
+#productID {
+	display: none;
+}
