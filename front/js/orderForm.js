@@ -122,26 +122,25 @@
 
 	//-----------------------POST------------------------
 	// écouter la soumission du formulaire
-	cartForm.addEventListener('submit', (event) => {
+	document.getElementById("formValidation").addEventListener('click', (event) => {
     event.preventDefault();
+    console.log("ok");
     if (validFirstName(firstName), validLastName(lastName), validAddress(address), validCity(city)!= true) {
         event.preventDefault();
         alert("Désolé un champ du formulaire n'est pas valide");
     };
     // création du tableau products qui recevra les ID 
-    let product = [];
-    console.log(product);
-    for (let eachId of storedBasket) {
+    let products = [];
+    console.log(products);
+    for (let eachId of storedCart) {
         products.push(eachId.id);
     };
+    console.log(products);
 
-    let contacts = new Contacts(firstName.value, lastName.value, address.value, city.value, email.value);
-    console.log(contacts);
+    let contact = new Contacts(firstName.value, lastName.value, address.value, city.value, email.value);
+    console.log(contact);
     // objet qui contient l'objet contact et le tableau products attendu sur le serveur
-    let data = {
-        contacts,
-        product
-    };
+    let data = JSON.stringify({contact, products});
     console.log(data);
     //vide le panier
     localStorage.clear();
@@ -149,22 +148,9 @@
 
     // Créer une requête de type "POST"
     let ajax = new Ajax;
-    ajax.open('POST', 'http://localhost:3000/api/teddies/order');
-    ajax.setRequestHeader('Content-Type', 'application/json');
-    ajax.send(JSON.stringify(data));
-    
-
-    // Lorsque la requête à bien été envoyée, récupérer le résultat renvoyé par le service web.
-    // status à 201
-    ajax.onreadystatechange = function () {
-        if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-            let response = JSON.parse(this.responseText);
-            //stocker les informations de l'object contact en sessionStorage
-            sessionStorage.setItem("orderId", JSON.stringify(response.orderId));
-            sessionStorage.setItem("contacts", JSON.stringify(response.contact));
-            sessionStorage.setItem("products", JSON.stringify(response.products));
-            window.location.href = '../html/confirmation.html';
-        }
-    };
+    ajax.request('POST', 'http://localhost:3000/api/teddies/order', data).then(response => {
+    	console.log(response);
+    });
+   
 
 });

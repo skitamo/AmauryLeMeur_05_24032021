@@ -1,5 +1,5 @@
 class Ajax {
-	request (method, url) {
+	request (method, url, data=null) {
 		return new Promise((resolve, reject) => {
 			var request = new XMLHttpRequest();
 			request.onreadystatechange = function() {
@@ -9,7 +9,8 @@ class Ajax {
 				}
 			};
 			request.open(method, url);
-			request.send();
+			request.setRequestHeader('Content-Type', 'application/json');
+			request.send(data);
 		});
 	}
 }
