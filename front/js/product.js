@@ -8,5 +8,6 @@ console.log(id);
 const ajax = new Ajax;
 const product = new Product;
 ajax.request("GET", "http://localhost:3000/api/teddies/" +id).then(response => {
+	var response = JSON.parse(this.responseText);
 	product.displayProduct(response);
 });

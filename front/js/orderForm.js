@@ -149,7 +149,7 @@
     // Créer une requête de type "POST"
     let ajax = new Ajax;
     ajax.request('POST', 'http://localhost:3000/api/teddies/order', data).then(response => {
-    	console.log(response);
+    	console.log(response.json());
     });
    
 
