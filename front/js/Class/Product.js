@@ -71,7 +71,7 @@ class Product {
 		title.innerHTML = response.name;
 		username.innerHTML = response._id;
 		description.innerHTML = response.description;
-		labelChoice.innerHTML = "Choix des option";
+		labelChoice.innerHTML = "Choix de la couleur";
 		labelQuantity.innerHTML = "Quantité";
 		price.innerHTML = response.price / 100 + ",00 €";
 		grossPrice.innerHTML = response.price;
