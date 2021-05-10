@@ -118,6 +118,10 @@
 			return false;
 		}
 	};
+	// écoute des modification sur input email
+	email.addEventListener("change", () => {
+		validEmail(email);
+	});
 
 
 	//-----------------------POST------------------------
