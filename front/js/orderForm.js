@@ -152,7 +152,9 @@
     let ajax = new Ajax;
     ajax.postRequest('http://localhost:3000/api/teddies/order', data).then(response => {
     	console.log(response);
-    	localStorage.setItem('data', JSON.stringify(response));
+    	localStorage.setItem('orderId', JSON.stringify(response.orderId));
+    	localStorage.setItem('contact', JSON.stringify(response.contact));
+    	localStorage.setItem('products', JSON.stringify(response.products));
     	window.location.href = 'confirmation.html';
     });
 

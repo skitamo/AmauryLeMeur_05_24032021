@@ -1,14 +1,12 @@
         //récuperation des infos
-        const data = localStorage.getItem('data');
-        console.log(JSON.parse(data));
 
-        let orderId = JSON.parse(sessionStorage.getItem("data.orderId"));
+        let orderId = JSON.parse(localStorage.getItem("orderId"));
         console.log(orderId)
-        let contact = JSON.parse(sessionStorage.getItem("data.contact"));
+        let contact = JSON.parse(localStorage.getItem("contact"));
         console.log(contact)
-        let products = JSON.parse(sessionStorage.getItem("data.products"));
+        let products = JSON.parse(localStorage.getItem("products"));
         console.log(products)
-        let totalPrice = JSON.parse(sessionStorage.getItem("data.prixTotal"));
+        let totalPrice = JSON.parse(sessionStorage.getItem("prixTotal"));
 
         //structure HTML de la page
         const formConfirm = document.getElementById("formConfirm");
@@ -31,6 +29,6 @@
 
         //message de remerciement 
         formName.innerHTML = "Merci " + contact.firstName + " " + contact.lastName + ".";
-        formCommand.innerHTML = "Votre commande n° : " + orderId + " est bien validée. " + totalPrice;
+        formCommand.innerHTML = "Votre commande n° : " + orderId + " d'un montant de " + totalPrice + " est bien validée.";
         formLocation.innerHTML = "La livraison se fera au " + contact.address + " à " + contact.city + ".";
         formContact.innerHTML = "Un mail de confirmation vous a été envoyé à cette adresse : " + contact.email;
