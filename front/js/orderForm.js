@@ -127,10 +127,8 @@
 	//-----------------------POST------------------------
 	// écouter la soumission du formulaire
 	document.getElementById("formValidation").addEventListener('click', (event) => {
-    event.preventDefault();
     console.log("ok");
     if (validFirstName(firstName), validLastName(lastName), validAddress(address), validCity(city)!= true) {
-        event.preventDefault();
         alert("Désolé un champ du formulaire n'est pas valide");
     };
     // création du tableau products qui recevra les ID 
@@ -152,9 +150,13 @@
 
     // Créer une requête de type "POST"
     let ajax = new Ajax;
-    ajax.request('POST', 'http://localhost:3000/api/teddies/order', data).then(response => {
-    	console.log(response.json());
+    ajax.postRequest('http://localhost:3000/api/teddies/order', data).then(response => {
+    	console.log(response);
+    	localStorage.setItem('data', JSON.stringify(response));
+    	window.location.href = 'confirmation.html';
     });
+
+
    
 
 });

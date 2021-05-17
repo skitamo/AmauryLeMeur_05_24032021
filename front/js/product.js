@@ -7,6 +7,6 @@ console.log(id);
 //connection à l'API et structure HTML
 const ajax = new Ajax;
 const product = new Product;
-ajax.request("GET", "http://localhost:3000/api/teddies/" +id).then(response => {
+ajax.getRequest("http://localhost:3000/api/teddies/" +id).then(response => {
 	product.displayProduct(response);
 });

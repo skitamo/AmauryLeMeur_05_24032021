@@ -27,6 +27,9 @@
 				const cartUnitPrice = document.createElement("div");
 				const cartPrice = document.createElement("div");
 				const cartQuantity = document.createElement("div");
+				const cartQuantityUp = document.createElement("i");
+				const cartQuantityMinus = document.createElement("i");
+				const cartQuantityDelete = document.createElement("i");
 				const cartTotalPrice = document.createElement("div");
 				const cartFinalPriceContainer = document.getElementById("finalPriceContainer");
 				const cartFinalPrice = document.getElementById("finalPrice");
@@ -42,6 +45,9 @@
 				cartInfo.appendChild(cartUnitPrice);
 				cartInfo.appendChild(cartPrice);
 				cartInfo.appendChild(cartQuantity);
+				cartQuantity.appendChild(cartQuantityUp);
+				cartQuantity.appendChild(cartQuantityMinus);
+				cartQuantity.appendChild(cartQuantityDelete);
 				cartInfo.appendChild(cartTotalPrice);
 
 				cartTitle.classList.add("text-center", "degrade");
@@ -56,6 +62,9 @@
 				cartUnitPrice.classList.add("d-none");
 				cartPrice.classList.add("font-weight-border", "col", "mt-3");
 				cartQuantity.classList.add("font-weight-border", "col", "mt-3");
+				cartQuantityUp.classList.add("fas", "fa-plus-circle");
+				cartQuantityMinus.classList.add("fas", "fa-minus-circle");
+				cartQuantityDelete.classList.add("fas", "fa-trash-alt");
 				cartTotalPrice.classList.add("font-weight-border", "col", "text-right", "mt-3");
 
 				// affiche l'article unitaire du panier

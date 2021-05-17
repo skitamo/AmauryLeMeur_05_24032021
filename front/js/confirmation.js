@@ -1,11 +1,14 @@
         //récuperation des infos
-        let orderId = JSON.parse(sessionStorage.getItem("orderId"));
+        const data = localStorage.getItem('data');
+        console.log(JSON.parse(data));
+
+        let orderId = JSON.parse(sessionStorage.getItem("data.orderId"));
         console.log(orderId)
-        let contact = JSON.parse(sessionStorage.getItem("contact"));
+        let contact = JSON.parse(sessionStorage.getItem("data.contact"));
         console.log(contact)
-        let products = JSON.parse(sessionStorage.getItem("products"));
+        let products = JSON.parse(sessionStorage.getItem("data.products"));
         console.log(products)
-        let totalPrice = JSON.parse(sessionStorage.getItem("prixTotal"));
+        let totalPrice = JSON.parse(sessionStorage.getItem("data.prixTotal"));
 
         //structure HTML de la page
         const formConfirm = document.getElementById("formConfirm");
