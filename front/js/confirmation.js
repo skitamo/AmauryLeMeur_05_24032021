@@ -29,6 +29,6 @@
 
         //message de remerciement 
         formName.innerHTML = "Merci " + contact.firstName + " " + contact.lastName + ".";
-        formCommand.innerHTML = "Votre commande n° : " + orderId + " d'un montant de " + totalPrice + " est bien validée.";
+        formCommand.innerHTML = "Votre commande n° : " + orderId + " d'un " + totalPrice + " est bien validée.";
         formLocation.innerHTML = "La livraison se fera au " + contact.address + " à " + contact.city + ".";
         formContact.innerHTML = "Un mail de confirmation vous a été envoyé à cette adresse : " + contact.email;
